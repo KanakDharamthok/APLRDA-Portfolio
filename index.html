@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Powered Legal Research and Drafting Assistant</title>
+
+<meta name="description" content="AI Powered Legal Research and Drafting Assistant - Research Smarter. Draft Faster. Argue Better.">
+<meta name="keywords" content="Legal AI, RAG, Legal Research, Draft Generation, FastAPI, Ollama, Gemma, ChromaDB">
+
+<meta name="author" content="Kanak Dharamthok">
+
+<meta property="og:title" content="AI Powered Legal Research and Drafting Assistant">
+
+<meta property="og:description" content="AI-driven legal intelligence platform for legal research, loophole detection and draft generation.">
+
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        ⚖️ AI Legal Assistant
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#techstack">Tech Stack</a></li>
+    </ul>
+
+    <a
+        href="https://github.com/KanakDharamthok"
+        target="_blank"
+        class="github-btn"
+    >
+        GitHub
+    </a>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>
+            AI Powered Legal Research and Drafting Assistant
+        </h1>
+
+        <h2>
+            Research Smarter. Draft Faster. Argue Better.
+        </h2>
+
+        <p>
+            An AI-driven legal intelligence platform that automates research,
+            detects procedural loopholes, and generates court-ready legal drafts.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#architecture" class="primary-btn">
+                Explore Architecture
+            </a>
+
+            <a
+                href="https://github.com/KanakDharamthok"
+                target="_blank"
+                class="secondary-btn"
+            >
+                View Source Code
+            </a>
+
+            <a
+                href="#demo-video"
+                class="secondary-btn"
+            >
+                Watch Demo
+            </a>
+
+            <a
+                href="#project-report"
+                class="secondary-btn"
+            >
+                Project Report
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECT STATS -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="stat-card">
+            <h3>5+</h3>
+            <p>AI Modules</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>3+</h3>
+            <p>Input Sources</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>1</h3>
+            <p>Local LLM Engine</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>Privacy Focused</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Legal Workflow</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>1 Click</h3>
+            <p>Draft Generation</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT PROJECT -->
+
+<section id="about" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            About The Project
+        </h2>
+
+        <p class="section-text">
+
+            AI Powered Legal Research and Drafting Assistant is an AI-driven
+            legal intelligence platform designed to support advocates,
+            legal researchers, law students, and law firms.
+
+            The platform automates courtroom transcription,
+            legal document processing,
+            legal research,
+            procedural loophole detection,
+            and court-ready draft generation.
+
+            By integrating Whisper, ChromaDB, Ollama, Gemma,
+            FastAPI, OCR, and Retrieval-Augmented Generation (RAG),
+            the system reduces manual effort while improving legal
+            research efficiency and drafting accuracy.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PROBLEM STATEMENT -->
+
+<section id="problem" class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Problem Statement
+        </h2>
+
+        <div class="problem-grid">
+
+            <div class="problem-card">
+                <h3>⚖ Time Consuming Research</h3>
+                <p>
+                    Legal research requires analyzing large volumes
+                    of statutes, precedents, and case documents.
+                </p>
+            </div>
+
+            <div class="problem-card">
+                <h3>📄 Manual Drafting</h3>
+                <p>
+                    Junior advocates spend significant time preparing
+                    repetitive legal drafts and applications.
+                </p>
+            </div>
+
+            <div class="problem-card">
+                <h3>🎙 Courtroom Documentation</h3>
+                <p>
+                    Capturing courtroom discussions accurately
+                    remains a challenging task.
+                </p>
+            </div>
+
+            <div class="problem-card">
+                <h3>🔍 Hidden Procedural Loopholes</h3>
+                <p>
+                    Important procedural violations often remain
+                    unnoticed during case preparation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY THIS PROJECT MATTERS -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Why This Project Matters
+        </h2>
+
+        <div class="impact-grid">
+
+            <div class="impact-card">⚖ Faster Legal Research</div>
+
+            <div class="impact-card">📄 Automated Draft Preparation</div>
+
+            <div class="impact-card">🎙 Courtroom Transcription</div>
+
+            <div class="impact-card">🔍 Loophole Detection</div>
+
+            <div class="impact-card">📚 Legal Knowledge Retrieval</div>
+
+            <div class="impact-card">🔒 Privacy Focused AI</div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- KEY FEATURES -->
+
+<section id="features" class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Key Features
+        </h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>⚖️ Legal Research Automation</h3>
+                <p>
+                    Retrieve relevant laws, statutes and legal precedents instantly.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎙️ Courtroom Speech Transcription</h3>
+                <p>
+                    Convert courtroom conversations into structured transcripts.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📄 FIR & Chargesheet Parsing</h3>
+                <p>
+                    Extract facts and legal information automatically using OCR.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔍 Procedural Loophole Detection</h3>
+                <p>
+                    Detect inconsistencies and procedural violations intelligently.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📚 Retrieval Augmented Generation</h3>
+                <p>
+                    Ground AI responses with relevant legal knowledge and precedents.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>✍️ Automated Draft Generation</h3>
+                <p>
+                    Generate court-ready legal documents automatically.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔒 Privacy-First Local AI</h3>
+                <p>
+                    Uses local AI infrastructure powered by Ollama and Gemma.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🚀 End-to-End Legal Workflow</h3>
+                <p>
+                    Complete workflow from evidence ingestion to draft generation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Executive Summary
+        </h2>
+
+        <div class="summary-table">
+
+            <div class="summary-row">
+                <span>Speech to Text</span>
+                <span>OpenAI Whisper</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Document Processing</span>
+                <span>OCR & PDF Parsing</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Knowledge Retrieval</span>
+                <span>ChromaDB + RAG</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Reasoning Engine</span>
+                <span>Ollama + Gemma 2</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Backend</span>
+                <span>FastAPI</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Output</span>
+                <span>Court-Ready Legal Drafts</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CASE STUDY -->
+
+<section class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Case Study
+        </h2>
+
+        <div class="case-flow">
+
+            <div class="case-box">
+                <h3>Input</h3>
+                <ul>
+                    <li>FIR Documents</li>
+                    <li>Chargesheets</li>
+                    <li>Courtroom Audio</li>
+                </ul>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="case-box">
+                <h3>AI Processing</h3>
+                <ul>
+                    <li>Whisper</li>
+                    <li>OCR</li>
+                    <li>RAG</li>
+                    <li>Loophole Detection</li>
+                </ul>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <div class="case-box">
+                <h3>Output</h3>
+                <ul>
+                    <li>Legal Arguments</li>
+                    <li>Case Insights</li>
+                    <li>Bail Draft</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECT TIMELINE -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Project Journey
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">Idea & Research</div>
+            <div class="timeline-item">Problem Analysis</div>
+            <div class="timeline-item">Data Collection</div>
+            <div class="timeline-item">Whisper Integration</div>
+            <div class="timeline-item">OCR Development</div>
+            <div class="timeline-item">RAG Knowledge Base</div>
+            <div class="timeline-item">Loophole Detection</div>
+            <div class="timeline-item">Draft Generation</div>
+            <div class="timeline-item">Architecture Expansion</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ARCHITECTURE PLACEHOLDER -->
+
+<section id="architecture" class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            System Architecture
+        </h2>
+
+        <p class="section-text">
+
+            The complete architecture diagram is currently under development.
+            It will showcase the Data Ingestion Layer,
+            Legal Knowledge Base,
+            Loophole Detection Engine,
+            AI Reasoning Pipeline,
+            and Draft Generation Workflow.
+
+        </p>
+
+        <div style="text-align:center; margin-top:30px;">
+
+            <button class="coming-soon-btn">
+                🚧 Architecture Diagram (Coming Soon)
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DEMO VIDEO -->
+
+<section id="demo-video" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Project Demonstration
+        </h2>
+
+        <p class="section-text">
+
+            Watch the complete workflow of the AI Powered Legal Research and
+            Drafting Assistant, from document ingestion and courtroom
+            transcription to loophole detection and automated drafting.
+
+        </p>
+
+        <div class="demo-placeholder">
+
+            <h3>🎥 Demo Video Coming Soon</h3>
+
+            <p>
+                YouTube demonstration link will be added here.
+            </p>
+
+            <a href="#" class="primary-btn">
+                Watch Demo
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- 5 MODULE AUTOMATION PIPELINE -->
+
+<section class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            The 5-Module Automation Pipeline
+        </h2>
+
+        <p class="section-text">
+            Explore each module of the legal intelligence pipeline.
+            Click any card to learn more.
+        </p>
+
+        <div class="module-grid">
+
+            <div class="module-card" onclick="openModal('mod1')">
+                <div class="module-icon">🎙️</div>
+                <h3>Module 1</h3>
+                <p>Courtroom Speech-to-Text Input</p>
+            </div>
+
+            <div class="module-card" onclick="openModal('mod2')">
+                <div class="module-icon">📄</div>
+                <h3>Module 2</h3>
+                <p>Legal Document Parser</p>
+            </div>
+
+            <div class="module-card" onclick="openModal('mod3')">
+                <div class="module-icon">📚</div>
+                <h3>Module 3</h3>
+                <p>Legal Knowledge Base</p>
+            </div>
+
+            <div class="module-card" onclick="openModal('mod4')">
+                <div class="module-icon">🔍</div>
+                <h3>Module 4</h3>
+                <p>Loophole Detection Engine</p>
+            </div>
+
+            <div class="module-card" onclick="openModal('mod5')">
+                <div class="module-icon">✍️</div>
+                <h3>Module 5</h3>
+                <p>Draft Generator</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WORKING DEMONSTRATION -->
+
+<section id="demo" class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Working Demonstration
+        </h2>
+
+        <div class="demo-timeline">
+
+            <div class="demo-step">
+
+                <img src="assets/images/workflow1.png"
+                     alt="Workflow Step 1">
+
+                <h3>Step 1</h3>
+
+                <p>User Verification & Login</p>
+
+            </div>
+
+            <div class="demo-step">
+
+                <img src="assets/images/workflow2.png"
+                     alt="Workflow Step 2">
+
+                <h3>Step 2</h3>
+
+                <p>Legal Document Upload</p>
+
+            </div>
+
+            <div class="demo-step">
+
+                <img src="assets/images/workflow3.png"
+                     alt="Workflow Step 3">
+
+                <h3>Step 3</h3>
+
+                <p>Document Processing</p>
+
+            </div>
+
+            <div class="demo-step">
+
+                <img src="assets/images/workflow4.png"
+                     alt="Workflow Step 4">
+
+                <h3>Step 4</h3>
+
+                <p>Legal Analysis</p>
+
+            </div>
+
+            <div class="demo-step">
+
+                <img src="assets/images/workflow5.png"
+                     alt="Workflow Step 5">
+
+                <h3>Step 5</h3>
+
+                <p>Draft Generation</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TECH STACK -->
+
+<section id="techstack" class="section dark-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Tech Stack & Architecture
+        </h2>
+
+        <div class="tech-grid">
+
+            <div class="tech-card">
+                <h3>AI & ML</h3>
+                <ul>
+                    <li>OpenAI Whisper</li>
+                    <li>Gemma 2</li>
+                    <li>Ollama</li>
+                    <li>RAG</li>
+                    <li>NLP</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h3>Backend</h3>
+                <ul>
+                    <li>FastAPI</li>
+                    <li>Python</li>
+                    <li>Pydantic</li>
+                    <li>Uvicorn</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h3>Data Layer</h3>
+                <ul>
+                    <li>ChromaDB</li>
+                    <li>Vector Embeddings</li>
+                    <li>JSON Processing</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h3>Document Processing</h3>
+                <ul>
+                    <li>OCR</li>
+                    <li>PDF Parsing</li>
+                    <li>Text Extraction</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h3>Frontend</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>GitHub Pages</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h3>Legal Framework</h3>
+                <ul>
+                    <li>BNS</li>
+                    <li>BNSS</li>
+                    <li>Legal Precedents</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FUTURE SCOPE -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Future Scope
+        </h2>
+
+        <div class="future-grid">
+
+            <div class="future-card">
+                🧑‍⚖️ Judge Assistance Module
+            </div>
+
+            <div class="future-card">
+                🌐 Multilingual Courtroom Support
+            </div>
+
+            <div class="future-card">
+                📱 Mobile Application
+            </div>
+
+            <div class="future-card">
+                ⚡ Real-Time Court Monitoring
+            </div>
+
+            <div class="future-card">
+                🤖 AI Legal Agents
+            </div>
+
+            <div class="future-card">
+                📑 Automated Case Summaries
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <h3>
+            AI Powered Legal Research and Drafting Assistant
+        </h3>
+
+        <p>
+            Research Smarter. Draft Faster. Argue Better.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="https://github.com/KanakDharamthok"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/kanak-dharamthok-8b6b8928b/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="mailto:ms.kanak.dharamthok@gmail.com">
+                Email
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Kanak Dharamthok. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- MODAL -->
+
+<div id="moduleModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-btn" onclick="closeModal()">
+            &times;
+        </span>
+
+        <h2 id="modalTitle">
+            Module Title
+        </h2>
+
+        <div id="modalBody">
+
+        </div>
+
+    </div>
+
+</div>
+<button id="backToTop">
+    ↑
+</button>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

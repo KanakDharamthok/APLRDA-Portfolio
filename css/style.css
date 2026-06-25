@@ -1,0 +1,887 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0b0f19;
+    color:#f5f5f5;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
+
+.section{
+    padding:100px 0;
+}
+
+.dark-section{
+    background:#111827;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.6rem;
+    margin-bottom:50px;
+    color:#C5A880;
+    font-weight:700;
+}
+
+.section-text{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#d1d5db;
+    font-size:1.05rem;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:rgba(11,15,25,0.85);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-weight:700;
+    color:#C5A880;
+    font-size:1rem;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#C5A880;
+}
+
+.github-btn{
+    padding:12px 22px;
+    background:#C5A880;
+    color:#0b0f19;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.github-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    background:url("../assets/images/lady_justice.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(11,15,25,0.85),
+        rgba(11,15,25,0.95)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    width:90%;
+    max-width:1000px;
+}
+
+.hero h1{
+    font-size:4rem;
+    line-height:1.2;
+    margin-bottom:25px;
+    font-weight:800;
+}
+
+.hero h2{
+    color:#C5A880;
+    font-size:1.7rem;
+    margin-bottom:25px;
+}
+
+.hero p{
+    color:#d1d5db;
+    font-size:1.1rem;
+    max-width:850px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    background:#C5A880;
+    color:#0b0f19;
+    padding:15px 30px;
+    border-radius:12px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
+}
+
+.secondary-btn{
+    border:1px solid #C5A880;
+    color:#C5A880;
+    padding:15px 30px;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.secondary-btn:hover{
+    background:#C5A880;
+    color:#0b0f19;
+}
+
+/* =========================
+   PROJECT STATS
+========================= */
+
+.stats-section{
+    padding:70px 0;
+    background:#0f172a;
+}
+
+.stats-section .container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+    border-color:#C5A880;
+}
+
+.stat-card h3{
+    color:#C5A880;
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:#d1d5db;
+}
+
+/* =========================
+   ABOUT + PROBLEM SECTION
+========================= */
+
+.problem-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.problem-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:18px;
+    transition:0.3s;
+}
+
+.problem-card:hover{
+    transform:translateY(-8px);
+    border-color:#C5A880;
+}
+
+.problem-card h3{
+    color:#C5A880;
+    margin-bottom:15px;
+}
+
+.problem-card p{
+    color:#d1d5db;
+}
+
+/* =========================
+   WHY PROJECT MATTERS
+========================= */
+
+.impact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.impact-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.impact-card:hover{
+    border-color:#C5A880;
+    transform:translateY(-5px);
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.feature-card{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:0.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    border-color:#C5A880;
+}
+
+.feature-card h3{
+    margin-bottom:15px;
+    color:#C5A880;
+}
+
+.feature-card p{
+    color:#d1d5db;
+}
+
+/* =========================
+   EXECUTIVE SUMMARY
+========================= */
+
+.summary-table{
+    max-width:900px;
+    margin:auto;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px;
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.summary-row span:first-child{
+    font-weight:600;
+}
+
+.summary-row span:last-child{
+    color:#C5A880;
+}
+
+/* =========================
+   CASE STUDY
+========================= */
+
+.case-flow{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.case-box{
+    width:100%;
+    max-width:600px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:18px;
+
+    padding:30px;
+}
+
+.case-box h3{
+    color:#C5A880;
+    margin-bottom:15px;
+}
+
+.case-box ul{
+    padding-left:20px;
+}
+
+.flow-arrow{
+    font-size:2rem;
+    color:#C5A880;
+}
+
+/* =========================
+   PROJECT TIMELINE
+========================= */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.timeline-item{
+    background:rgba(255,255,255,0.04);
+
+    border-left:4px solid #C5A880;
+
+    padding:20px 25px;
+
+    border-radius:10px;
+
+    transition:0.3s;
+}
+
+.timeline-item:hover{
+    transform:translateX(10px);
+}
+
+/* =========================
+   ARCHITECTURE PLACEHOLDER
+========================= */
+
+.coming-soon-btn{
+    background:#C5A880;
+    color:#0b0f19;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    cursor:not-allowed;
+}
+
+/* =========================
+   DEMO SECTION
+========================= */
+
+.demo-placeholder{
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.demo-placeholder h3{
+    color:#C5A880;
+    margin-bottom:15px;
+}
+
+.demo-placeholder p{
+    margin-bottom:25px;
+    color:#d1d5db;
+}
+
+/* =========================
+   MODULE PIPELINE
+========================= */
+
+.module-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.module-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+
+    padding:30px;
+    border-radius:20px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+}
+
+.module-card:hover{
+    transform:translateY(-10px);
+    border-color:#C5A880;
+    box-shadow:0 15px 40px rgba(197,168,128,.15);
+}
+
+.module-icon{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.module-card h3{
+    color:#C5A880;
+    margin-bottom:10px;
+}
+
+/* =========================
+   WORKFLOW DEMONSTRATION
+========================= */
+
+.demo-timeline{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.demo-step{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:0.3s;
+}
+
+.demo-step:hover{
+    transform:translateY(-8px);
+    border-color:#C5A880;
+}
+
+.demo-step img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.demo-step h3{
+    padding:20px 20px 10px;
+    color:#C5A880;
+}
+
+.demo-step p{
+    padding:0 20px 20px;
+    color:#d1d5db;
+}
+
+/* =========================
+   TECH STACK
+========================= */
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.tech-card{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    transition:.3s;
+}
+
+.tech-card:hover{
+    border-color:#C5A880;
+    transform:translateY(-8px);
+}
+
+.tech-card h3{
+    color:#C5A880;
+    margin-bottom:20px;
+}
+
+.tech-card ul{
+    padding-left:20px;
+}
+
+.tech-card li{
+    margin-bottom:8px;
+    color:#d1d5db;
+}
+
+/* =========================
+   FUTURE SCOPE
+========================= */
+
+.future-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.future-card{
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.future-card:hover{
+    border-color:#C5A880;
+    transform:translateY(-6px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#050811;
+
+    padding:70px 0;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer h3{
+    color:#C5A880;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:#9ca3af;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+
+    margin:30px 0;
+}
+
+.footer-links a{
+    color:#C5A880;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.copyright{
+    margin-top:20px;
+    font-size:.9rem;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    z-index:9999;
+}
+
+.modal-content{
+    width:100%;
+    max-width:850px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    position:relative;
+
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.modal-content h2{
+    color:#C5A880;
+    margin-bottom:20px;
+}
+
+.close-btn{
+    position:absolute;
+    right:20px;
+    top:10px;
+
+    font-size:2rem;
+    cursor:pointer;
+    color:white;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+.feature-card,
+.problem-card,
+.impact-card,
+.stat-card,
+.module-card,
+.tech-card,
+.future-card,
+.demo-step{
+    backdrop-filter:blur(12px);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero h2{
+        font-size:1.4rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero{
+        padding:120px 20px;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero h2{
+        font-size:1.2rem;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .summary-row{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:1.9rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+/* BACK TO TOP BUTTON */
+
+#backToTop{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#C5A880;
+
+    color:#0b0f19;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:999;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+    transition:0.3s;
+}
+
+#backToTop:hover{
+
+    transform:translateY(-4px);
+
+}
