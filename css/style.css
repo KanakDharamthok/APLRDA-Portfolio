@@ -98,22 +98,21 @@ img{
     gap:30px;
 }
 
-.nav-links a{
-    color:white;
-    transition:.3s;
+.nav-links a {
+    color: #f5d7a1 !important;
 }
 
 .nav-links a:hover{
     color:#C5A880;
 }
 
-.github-btn{
-    padding:12px 22px;
-    background:#C5A880;
-    color:#0b0f19;
-    border-radius:10px;
-    font-weight:600;
-    transition:.3s;
+.github-btn {
+    padding: 8px 16px;
+    background: #d4af37;
+    color: black;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .github-btn:hover{
@@ -827,16 +826,29 @@ height:220px;
 
 @media(max-width:768px){
 
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-        padding:15px;
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #0b0f1a; /* important for visibility */
     }
 
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:15px;
+    .nav-links {
+       display: flex;
+       gap: 25px;
+       list-style: none;
+       align-items: center;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: #f5d7a1;
+        font-weight: 500;
     }
 
     .hero{
@@ -1014,4 +1026,19 @@ transform:rotate(90deg);
 
 }
 
+}
+/* =========================
+   COMING SOON BUTTON
+========================= */
+
+.coming-soon-btn {
+    display: inline-block;
+    padding: 7px 16px;
+    background: #C5A880;
+    color: #0b0f19;
+    border-radius: 50px;
+    font-size: .8rem;
+    font-weight: 700;
+    border: none;
+    cursor: default;
 }
