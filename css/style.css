@@ -14,20 +14,9 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
+    background:#0b0f19;
     color:#f5f5f5;
     line-height:1.7;
-
-    background:
-    linear-gradient(
-        rgba(11,15,25,0.88),
-        rgba(11,15,25,0.93)
-    ),
-    url("../assets/images/lady_justice.png");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
 }
 
 a{
@@ -144,6 +133,46 @@ img{
     justify-content:center;
 
     position:relative;
+
+    padding:120px 0 80px;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        180deg,
+        #0b0f19 0%,
+        #111827 50%,
+        #0b0f19 100%
+    );
+}
+
+/* Gold glow behind title */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:radial-gradient(
+        circle,
+        rgba(197,168,128,.18) 0%,
+        rgba(197,168,128,.08) 40%,
+        transparent 75%
+    );
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    filter:blur(60px);
+
+    z-index:0;
 }
 
 .overlay{
@@ -151,16 +180,18 @@ img{
     position:absolute;
     inset:0;
 
-    background:
-    linear-gradient(
-        rgba(11,15,25,.60),
-        rgba(11,15,25,.80)
+    background:linear-gradient(
+        rgba(11,15,25,.15),
+        rgba(11,15,25,.35)
     );
+
+    z-index:1;
 }
 
 .hero-content{
 
     position:relative;
+
     z-index:2;
 
     text-align:center;
@@ -172,25 +203,68 @@ img{
 .hero h1{
 
     font-size:4rem;
+
     line-height:1.15;
+
     margin-bottom:25px;
+
     font-weight:800;
+
+    color:#ffffff;
+
+    text-shadow:0 0 20px rgba(197,168,128,.15);
 }
 
 .hero h2{
 
     color:#C5A880;
-    font-size:1.7rem;
+
+    font-size:1.6rem;
+
     margin-bottom:25px;
+
+    font-weight:600;
 }
 
 .hero p{
 
     color:#d1d5db;
+
     font-size:1.1rem;
+
     max-width:850px;
+
     margin:auto;
+
     margin-bottom:40px;
+
+    line-height:1.8;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding:100px 20px 60px;
+    }
+
+    .hero h1{
+
+        font-size:2.8rem;
+    }
+
+    .hero h2{
+
+        font-size:1.3rem;
+    }
+
+    .hero p{
+
+        font-size:1rem;
+    }
+
 }
 
 /* =========================
@@ -231,50 +305,78 @@ img{
 }
 
 /* =========================
-   PROJECT STATS
+   PROJECT HIGHLIGHTS
 ========================= */
 
-.stats-section{
-    padding:70px 0;
-    background:#0f172a;
-}
+.highlights-grid{
 
-.stats-section .container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:25px;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+    margin-top:20px;
 }
 
-.stat-card{
-    background:rgba(255,255,255,0.04);
+.highlight-card{
 
-    border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,.04);
 
-    border-radius:18px;
+    border:1px solid rgba(197,168,128,.18);
 
-    padding:30px;
+    border-radius:20px;
+
+    padding:35px 28px;
 
     text-align:center;
 
-    backdrop-filter:blur(10px);
+    transition:.35s;
 
-    transition:0.3s;
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
 }
 
-.stat-card:hover{
-    transform:translateY(-6px);
+.highlight-card:hover{
+
+    transform:translateY(-8px);
+
     border-color:#C5A880;
+
+    box-shadow:0 20px 45px rgba(197,168,128,.18);
+
 }
 
-.stat-card h3{
+.highlight-icon{
+
+    font-size:2.8rem;
+
+    margin-bottom:18px;
+
+}
+
+.highlight-card h3{
+
     color:#C5A880;
-    font-size:2rem;
-    margin-bottom:10px;
+
+    font-size:1.25rem;
+
+    margin-bottom:15px;
+
 }
 
-.stat-card p{
+.highlight-card p{
+
     color:#d1d5db;
+
+    line-height:1.8;
+
+    font-size:.97rem;
+
 }
+
 
 /* =========================
    ABOUT + PROBLEM SECTION
@@ -306,6 +408,43 @@ img{
 
 .problem-card p{
     color:#d1d5db;
+}
+
+/* =========================
+   TRANSFORMING THE LEGAL WORKFLOW
+========================= */
+
+.workflow-comparison{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.workflow-box{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:18px;
+    transition:0.3s;
+}
+
+.workflow-box:hover{
+    transform:translateY(-8px);
+    border-color:#C5A880;
+}
+
+.workflow-box h3{
+    color:#C5A880;
+    margin-bottom:15px;
+}
+
+.workflow-box ul{
+    padding-left:20px;
+}
+
+.workflow-arrow{
+    font-size:2rem;
+    color:#C5A880;
 }
 
 /* =========================
@@ -375,149 +514,6 @@ img{
 }
 
 /* =========================
-   EXECUTIVE SUMMARY
-========================= */
-
-.summary-table{
-    max-width:900px;
-    margin:auto;
-}
-
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:20px;
-
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-.summary-row span:first-child{
-    font-weight:600;
-}
-
-.summary-row span:last-child{
-    color:#C5A880;
-}
-
-/* =========================
-   CASE STUDY
-========================= */
-
-.case-flow{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
-}
-
-.case-box{
-    width:100%;
-    max-width:600px;
-
-    background:rgba(255,255,255,0.04);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:18px;
-
-    padding:30px;
-}
-
-.case-box h3{
-    color:#C5A880;
-    margin-bottom:15px;
-}
-
-.case-box ul{
-    padding-left:20px;
-}
-
-.flow-arrow{
-    font-size:2rem;
-    color:#C5A880;
-}
-
-/* =========================
-   PROJECT TIMELINE
-========================= */
-
-.timeline{
-    max-width:800px;
-    margin:auto;
-
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.timeline-item{
-    background:rgba(255,255,255,0.04);
-
-    border-left:4px solid #C5A880;
-
-    padding:20px 25px;
-
-    border-radius:10px;
-
-    transition:0.3s;
-}
-
-.timeline-item:hover{
-    transform:translateX(10px);
-}
-
-/* =========================
-   ARCHITECTURE PLACEHOLDER
-========================= */
-
-.coming-soon-btn{
-    background:#C5A880;
-    color:#0b0f19;
-
-    border:none;
-
-    padding:15px 30px;
-
-    border-radius:12px;
-
-    font-weight:700;
-
-    cursor:not-allowed;
-}
-
-/* =========================
-   DEMO SECTION
-========================= */
-
-.demo-placeholder{
-    max-width:700px;
-
-    margin:auto;
-
-    text-align:center;
-
-    padding:50px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,0.04);
-
-    border:1px solid rgba(255,255,255,0.08);
-}
-
-.demo-placeholder h3{
-    color:#C5A880;
-    margin-bottom:15px;
-}
-
-.demo-placeholder p{
-    margin-bottom:25px;
-    color:#d1d5db;
-}
-
-/* =========================
    MODULE PIPELINE
 ========================= */
 
@@ -562,155 +558,110 @@ img{
    WORKFLOW DEMONSTRATION
 ========================= */
 
-.demo-slider{
+.demo-grid{
 
-    display:flex;
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
 
     gap:35px;
 
-    overflow-x:auto;
-
-    scroll-snap-type:x mandatory;
-
-    padding:20px 5px 25px;
-
-    scroll-behavior:smooth;
-}
-
-.demo-slider::-webkit-scrollbar{
-
-    height:8px;
-}
-
-.demo-slider::-webkit-scrollbar-track{
-
-    background:#1a1f2b;
-
-    border-radius:20px;
-}
-
-.demo-slider::-webkit-scrollbar-thumb{
-
-    background:#C5A880;
-
-    border-radius:20px;
-}
-
-.demo-slider::-webkit-scrollbar-thumb:hover{
-
-    background:#d8b98f;
+    margin-top:50px;
 }
 
 .demo-step{
 
-    min-width:500px;
+    background:#141b27;
 
-    background:rgba(18,22,32,.95);
+    border:1px solid rgba(197,168,128,.18);
 
-    border:1px solid rgba(197,168,128,.30);
-
-    border-radius:22px;
+    border-radius:18px;
 
     overflow:hidden;
 
-    scroll-snap-align:center;
-
     transition:.35s;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-
-    flex-shrink:0;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
 .demo-step:hover{
 
-    transform:translateY(-10px) scale(1.02);
+    transform:translateY(-8px);
 
     border-color:#C5A880;
 
-    box-shadow:0 22px 50px rgba(197,168,128,.20);
+    box-shadow:0 20px 45px rgba(197,168,128,.20);
 }
 
 .demo-step img{
 
     width:100%;
 
-    height:340px;
+    height:260px;
 
-    object-fit:contain;
+    object-fit:cover;
 
-    background:#0f1420;
+    transition:.35s;
+}
 
-    padding:20px;
+.demo-step:hover img{
 
-    border-bottom:1px solid rgba(197,168,128,.15);
+    transform:scale(1.03);
 }
 
 .demo-content{
 
-    padding:25px;
+    padding:28px;
 }
 
 .step-badge{
 
-    display:inline-flex;
+    display:inline-block;
 
-    align-items:center;
+    padding:7px 16px;
 
-    justify-content:center;
+    background:#C5A880;
 
-    padding:8px 18px;
+    color:#0b0f19;
 
-    background:rgba(197,168,128,.15);
+    border-radius:50px;
 
-    border:1px solid rgba(197,168,128,.35);
-
-    color:#C5A880;
-
-    border-radius:999px;
-
-    font-size:.82rem;
+    font-size:.8rem;
 
     font-weight:700;
 
-    letter-spacing:1.5px;
-
     margin-bottom:18px;
-
-    text-transform:uppercase;
 }
 
 .demo-content h3{
 
     font-size:1.45rem;
 
-    color:white;
+    margin-bottom:15px;
 
-    margin-bottom:12px;
+    color:white;
 }
 
 .demo-content p{
 
     color:#cfd4df;
 
-    line-height:1.7;
-
-    font-size:.98rem;
+    line-height:1.8;
 }
-
-/* Responsive */
 
 @media(max-width:768px){
 
-    .demo-step{
+.demo-grid{
 
-        min-width:90%;
-    }
+grid-template-columns:1fr;
 
-    .demo-step img{
+}
 
-        height:260px;
-    }
+.demo-step img{
+
+height:220px;
+
+}
 
 }
 
@@ -1016,7 +967,7 @@ img{
 
 }
 
-/* WHY THIS PROJECT MATTERS */
+/* TRANSFORMING THE LEGAL WORKFLOW */
 
 .workflow-comparison{
 
